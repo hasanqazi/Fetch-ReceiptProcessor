@@ -17,23 +17,31 @@ func TestGetAlphanumericLength(t *testing.T) {
 
 func TestCalculatePoints(t *testing.T) {
 	receipt := Receipt{
-		Retailer:     "Example Retailer",
-		PurchaseDate: "2023/07/06",
-		PurchaseTime: "15:30",
+		Retailer:     "M&M Corner Market",
+		PurchaseDate: "2022-03-20",
+		PurchaseTime: "14:33",
 		Items: []Item{
 			{
-				ShortDescription: "Item 1",
-				Price:            "9.99",
+				ShortDescription: "Gatorade",
+				Price:            "2.25",
 			},
 			{
-				ShortDescription: "Item 2",
-				Price:            "4.50",
+				ShortDescription: "Gatorade",
+				Price:            "2.25",
+			},
+			{
+				ShortDescription: "Gatorade",
+				Price:            "2.25",
+			},
+			{
+				ShortDescription: "Gatorade",
+				Price:            "2.25",
 			},
 		},
-		Total: "14.49",
+		Total: "9.00",
 	}
 
-	expectedPoints := 39
+	expectedPoints := 109
 	points := CalculatePoints(&receipt)
 
 	if points != expectedPoints {
