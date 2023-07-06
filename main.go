@@ -30,7 +30,7 @@ type Item struct {
 	Price            string `json:"price"`
 }
 
-// InMemoryStorage represents an in-memory storage for receipts
+// represents an in-memory storage for receipts
 type InMemoryStorage struct {
 	sync.RWMutex
 	receipts map[string]Receipt
